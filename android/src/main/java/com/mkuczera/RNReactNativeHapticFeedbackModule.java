@@ -4,7 +4,6 @@ package com.mkuczera;
 import android.app.Activity;
 import android.os.Build;
 import android.os.VibrationEffect;
-import android.util.Log;
 import android.os.Vibrator;
 import android.content.Context;
 import android.provider.Settings;
@@ -121,6 +120,6 @@ public class RNReactNativeHapticFeedbackModule extends ReactContextBaseJavaModul
         if (curActivity == null) return;
         View contentView = curActivity.findViewById(android.R.id.content);
         if (contentView == null) return;
-        contentView.performHapticFeedback(hapticConstant);
+        contentView.performHapticFeedback(hapticConstant, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
     }
 }
